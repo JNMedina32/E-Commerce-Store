@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  color: white;
+  margin: 0;
+}
+
+.banner {
+  color: orangered;
+  width: 100%;
+  position: relative;
+  border: 1px solid red;
+}
+
+.individualProduct {
+  background-color: orangered;
+  display: flex;
+  justify-self: center;
+  align-self: flex-start;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.card-link {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: larger;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.cart, .user {
+  width: auto;
+  background-color: blue;
+  color: orangered;
+}
+
+.search {
+  background-color: orangered;
+}
+.cartAndSearch {
+  display: flex;
+  justify-content: center;
+}
