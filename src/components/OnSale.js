@@ -7,10 +7,7 @@ export default function OnSale({ saleProducts }){
   const { title, price, image } = saleProducts;
   const [sPrice, setSPrice] = useState()
 
-  function salePrice(price){
-    let salePrice = price - (price * 10);
-    return salePrice.toFixed(2)
-  }
+
   
 
   return (
