@@ -5,6 +5,10 @@
   margin: 0;
 }
 
+.navbar {
+  background-color: #282c34;
+}
+
 .banner {
   color: orangered;
   width: 100%;
@@ -47,4 +51,8 @@
 .cartAndSearch {
   display: flex;
   justify-content: center;
+}
+.sale-card-body {
+  color: red;
+  background-color: yellow;
 }

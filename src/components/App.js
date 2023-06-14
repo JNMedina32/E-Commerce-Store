@@ -1,20 +1,24 @@
 import CallAPI from './CallAPI';
-import './App.css';
+import '../components/App.css';
 import Banner from './Banner';
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Cart from '../pages/Cart';
+import NoPage from '../pages/NoPage';
+import Home from '../pages/Home';
 
 
 function App() {
 
-  const [searchProducts, setSearchProducts] = useState('');
-
-
-
   return (
-    <div className="App">
+    <BrowserRouter>
       <Banner />
-      <CallAPI />
-    </div>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path='cart' element={<Cart />} />
+        <Route path='*' element={<NoPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
