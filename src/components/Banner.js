@@ -1,56 +1,68 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from '../assets/logo2.jpg';
-import { FaSearch, FaShoppingCart, FaUserAlt } from 'react-icons/fa';
-import CallAPI from "./CallAPI";
+import Logo from "../assets/logo2.jpg";
+import { FaSearch, FaShoppingCart, FaUserAlt } from "react-icons/fa";
+import HoverCart from "./HoverCart";
 
-
-
-export default function Banner(){
-
-  const [userSearch, setUserSearch] = useState('');
-  const [seacrhAPI, setSearchAPI] = useState('');
+export default function Banner(props) {
+  const { setUserSearch, cart } = props;
+  const [userInput, setUserInput] = useState("");
+  const [isCartHovered, setIsCartHovered] = useState(false);
 
   const handleInput = (e) => {
-    setUserSearch(e.target.value);
-  }
+    setUserInput(e.target.value);
+  };
 
   const handleSearch = () => {
-    setSearchAPI(userSearch);
-  }
+    setUserSearch(userInput);
+    setUserInput("");
+  };
 
-
+  const toggleCart = () => {
+    setIsCartHovered(!isCartHovered);
+  };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar sticky-top">
       <div className="container-fluid banner">
-        <Link to='/'>
-          <img src={Logo} 
-            width="100" 
-            height="100" 
-            className="d-inline-block align-text-top logo" />
-          </Link>
-          <h1 className="col storeName">Phoenix Shopping</h1>
-        
+        <Link to="/">
+          <img
+            src={Logo}
+            width="100"
+            height="100"
+            className="d-inline-block align-text-top logo"
+          />
+        </Link>
+        <h1 className="col storeName">Phoenix Shopping</h1>
+
         <div className="col input-group input-group-sm">
-          <input 
-            type="text" 
+          <input
+            type="text"
             className="form-control userSearch"
             onChange={handleInput}
             placeholder="search products"
+            value={userInput}
           />
-          <span 
-            className="btn search input-group-text"
-            onClick={handleSearch}
-          ><FaSearch /></span>
+          <span className="btn search input-group-text" onClick={handleSearch}>
+            <FaSearch />
+          </span>
         </div>
-        <Link to='cart'>
-          <button className="btn btn-lg cart"><FaShoppingCart /></button>
+        <Link to="cart">
+          <button
+            className="btn btn-lg cart"
+            onMouseEnter={toggleCart}
+            onMouseLeave={toggleCart}
+          >
+            <FaShoppingCart />
+          </button><br />
+          {isCartHovered && <HoverCart cart={cart} />}
         </Link>
         <Link>
-          <button className="btn btn-lg user"><FaUserAlt /></button>
+          <button className="btn btn-lg user">
+            <FaUserAlt />
+          </button>
         </Link>
       </div>
     </nav>
-  )
+  );
 }

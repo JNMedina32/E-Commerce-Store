@@ -1,4 +1,34 @@
 .cartPage {
   color: orangered;
+  align-items: center;
+  width: fit-content;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  align-items: center;
+  padding: 0;
+}
+
+.cardCart {
+  background-color: blue;
+  align-items: center;
+  /* margin: 0;
+  padding: 0; */
   border: 1px solid orangered;
+}
+
+.cardImg {
+  width: 13rem;
+}
+
+.cartBtn {
+  width: 50%;
+  justify-self: center;
+}
+
+.discount {
+  display: flex;
+  justify-content: center;
 }
