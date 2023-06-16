@@ -12,22 +12,22 @@ export default function Home(props) {
 
   return (
     <div className="App">
+        {console.log(products)}
       <div className="container">
         <div className="row sale">
-          <OnSale product={products[randomNumber]} setCart={setCart} />
+          {/* <OnSale product={products[randomNumber]} setCart={setCart} /> */}
         </div>
         <br />
-        {searchProducts &&
-          searchProducts.map((product) => (
-            <div className="row gy-5 products">
+        <div className="row gy-4 products">
+          {searchProducts &&
+            searchProducts.map((product) => (
               <DisplayProducts
                 product={product}
                 key={product.id}
                 setCart={setCart}
               />
-            </div>
-          ))}
-
+            ))}
+        </div>
         <div className="row gy-4 products">
           {products.map((product) => (
             <DisplayProducts

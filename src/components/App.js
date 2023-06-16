@@ -7,7 +7,6 @@ import NoPage from "../pages/NoPage";
 import Home from "../pages/Home";
 import useLocalStorage from "../assets/useLocalStorage";
 
-
 function App() {
   const [cart, setCart, removeFromCart] = useLocalStorage("cart", []);
   const [userSearch, setUserSearch] = useState("");
@@ -15,8 +14,7 @@ function App() {
   const [fetchURL, setFetchURL] = useState(
     "https://api.escuelajs.co/api/v1/products"
   );
-  // const [filterProducts, setFilterProducts] = useState('')
-
+  const [filterProducts, setFilterProducts] = useState("");
 
   let searchProducts;
   if (userSearch) {
@@ -31,23 +29,33 @@ function App() {
       .then((products) => setProducts(products));
   }, []);
 
-
   return (
     <BrowserRouter>
-      <Banner setUserSearch={setUserSearch} cart={cart} />
+      <Banner
+        setUserSearch={setUserSearch}
+        cart={cart}
+        setFilterProducts={setFilterProducts}
+      />
       <Routes>
         <Route
-          index
           path="/"
           element={
-            <Home cart={cart} setCart={setCart} userSearch={userSearch} products={products} searchProducts={searchProducts} />
+            <Home
+              cart={cart}
+              setCart={setCart}
+              userSearch={userSearch}
+              products={products}
+              searchProducts={searchProducts}
+              filterProducts={filterProducts}
+            />
           }
-        />
-        <Route
-          path="cart"
-          element={<Cart cart={cart} removeFromCart={removeFromCart} />}
-        />
-        <Route path="*" element={<NoPage />} />
+        >
+          <Route
+            path="cart"
+            element={<Cart cart={cart} removeFromCart={removeFromCart} />}
+          />
+          <Route path="*" element={<NoPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

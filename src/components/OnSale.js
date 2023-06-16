@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaShoppingCart, FaSearch } from "react-icons/fa";
 
 export default function OnSale(props) {

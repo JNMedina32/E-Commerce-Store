@@ -3,7 +3,7 @@
 
 export default function FilterProducts(props) {
   return (
-    <div>
+    <div className="col filterBar">
       FilteredProducts
     </div>
   )
