@@ -1,5 +1,5 @@
 {
-  "name": "e-commerce-app",
+  "name": "e-commerce-store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -41,5 +41,5 @@
     "gh-pages": "^5.0.0",
     "react-router-dom": "^6.12.1"
   },
-  "homepage": "https://JNMedina32.github.io/E-Commerce-App"
+  "homepage": "https://JNMedina32.github.io/E-Commerce-Store"
 }
