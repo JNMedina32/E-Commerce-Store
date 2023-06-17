@@ -65,7 +65,7 @@ function App() {
         productCategories={productCategories}
       />
       <Routes>
-        <Route
+        {/* <Route
           index
           element={
             <Home
@@ -78,7 +78,7 @@ function App() {
               productsFiltered={productsFiltered}
             />
           }
-        />
+        /> */}
         <Route
           path="/"
           element={
@@ -92,13 +92,12 @@ function App() {
               productsFiltered={productsFiltered}
             />
           }
-        >
+        />
           <Route
-            path="/cart"
+            path="cart"
             element={<Cart cart={cart} removeFromCart={removeFromCart} />}
           />
-          <Route path="*" element={<NoPage />} />
-        </Route>
+          <Route path="/*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
   );

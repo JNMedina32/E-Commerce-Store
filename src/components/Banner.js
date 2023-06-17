@@ -46,7 +46,7 @@ export default function Banner(props) {
           </span>
         </div>
         <span className="col link">
-          <Link to="cart">
+          <Link to="/cart">
             <button
               className="btn btn-lg cart"
               onMouseEnter={toggleCart}

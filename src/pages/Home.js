@@ -15,7 +15,7 @@ export default function Home(props) {
         {/* {console.log(products)} */}
       <div className="container">
         <div className="row sale">
-          {/* <OnSale product={products[randomNumber]} setCart={setCart} /> */}
+          <OnSale product={products[randomNumber]} setCart={setCart} />
         </div>
         <br />
         <div className="row gy-4 products">

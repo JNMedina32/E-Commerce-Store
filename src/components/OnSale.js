@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaShoppingCart, FaSearch } from "react-icons/fa";
 
 export default function OnSale(props) {
-  const { title, price, images } = props.product;
+  const { title = 'Josh', price = 500, images = '' } = props.product || {};
   const { setCart } = props;
   const [showPopup, setShowPopup] = useState(false);
   const sPrice = price - price * 0.5;

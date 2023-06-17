@@ -21,10 +21,7 @@ export default function DisplayProducts(props) {
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
           <p className="card-text">${price.toFixed(2)} USD</p>
-          <div className="cartAndSearch">
-            <div className="btn card-link cart2">
-              <FaSearch />
-            </div>
+          <div>
             <div
               className="btn card-link cart2"
               onClick={() => addToCart(props.product)}
