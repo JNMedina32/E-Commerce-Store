@@ -37,7 +37,7 @@ function App() {
         })
       );
     }
-  }, [userFilter])
+  }, [userFilter]);
 
   useEffect(() => {
     const proCats = new Set();
@@ -65,20 +65,20 @@ function App() {
         productCategories={productCategories}
       />
       <Routes>
-      <Route
-            index
-            element={
-              <Home
-                cart={cart}
-                setCart={setCart}
-                userSearch={userSearch}
-                products={products}
-                searchProducts={searchProducts}
-                userFilter={userFilter}
-                productsFiltered={productsFiltered}
-              />
-            }
-          />
+        <Route
+          index
+          element={
+            <Home
+              cart={cart}
+              setCart={setCart}
+              userSearch={userSearch}
+              products={products}
+              searchProducts={searchProducts}
+              userFilter={userFilter}
+              productsFiltered={productsFiltered}
+            />
+          }
+        />
         <Route
           path="/"
           element={
@@ -92,14 +92,12 @@ function App() {
               productsFiltered={productsFiltered}
             />
           }
-        >
-          </Route>
-          <Route
-            path="cart"
-            element={<Cart cart={cart} removeFromCart={removeFromCart} />}
-          />
-          <Route path="*" element={<NoPage />} />
-        
+        ></Route>
+        <Route
+          path="cart"
+          element={<Cart cart={cart} removeFromCart={removeFromCart} />}
+        />
+        <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
   );
