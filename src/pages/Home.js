@@ -4,7 +4,7 @@ import DisplayProducts from "../components/DisplayProducts";
 import { useState } from "react";
 
 export default function Home(props) {
-  const { setCart, products, searchProducts } = props;
+  const { setCart, products, searchProducts, productsFiltered } = props;
 
   const [randomNumber, setRandomNumber] = useState(() =>
     Math.floor(Math.random() * products.length)
@@ -12,7 +12,7 @@ export default function Home(props) {
 
   return (
     <div className="App">
-        {console.log(products)}
+        {/* {console.log(products)} */}
       <div className="container">
         <div className="row sale">
           {/* <OnSale product={products[randomNumber]} setCart={setCart} /> */}
@@ -21,6 +21,14 @@ export default function Home(props) {
         <div className="row gy-4 products">
           {searchProducts &&
             searchProducts.map((product) => (
+              <DisplayProducts
+                product={product}
+                key={product.id}
+                setCart={setCart}
+              />
+            ))}
+            {productsFiltered &&
+            productsFiltered.map((product) => (
               <DisplayProducts
                 product={product}
                 key={product.id}

@@ -14,14 +14,41 @@ function App() {
   const [fetchURL, setFetchURL] = useState(
     "https://api.escuelajs.co/api/v1/products"
   );
-  const [filterProducts, setFilterProducts] = useState("");
+  const [userFilter, setUserFilter] = useState("");
+  const [searchProducts, setSearchProducts] = useState("");
+  const [productCategories, setProductCategories] = useState(new Set());
+  const [productsFiltered, setProductsFiltered] = useState("");
 
-  let searchProducts;
-  if (userSearch) {
-    searchProducts = products.filter((item) => {
-      return item.title.toLowerCase().includes(userSearch.toLowerCase());
-    });
-  }
+  useEffect(() => {
+    if (userSearch) {
+      setSearchProducts(
+        products.filter((item) => {
+          return item.title.toLowerCase().includes(userSearch.toLowerCase());
+        })
+      );
+    }
+  }, [userSearch]);
+
+  useEffect(() => {
+    if (userFilter) {
+      setProductsFiltered(
+        products.filter((item) => {
+          return item.category.name.includes(userFilter);
+        })
+      );
+    }
+  }, [userFilter])
+
+  useEffect(() => {
+    const proCats = new Set();
+    if (products) {
+      products.forEach((product) => {
+        const categoryName = product.category.name;
+        proCats.add(categoryName);
+      });
+    }
+    setProductCategories(proCats);
+  }, [products]);
 
   useEffect(() => {
     fetch(fetchURL)
@@ -34,7 +61,8 @@ function App() {
       <Banner
         setUserSearch={setUserSearch}
         cart={cart}
-        setFilterProducts={setFilterProducts}
+        setUserFilter={setUserFilter}
+        productCategories={productCategories}
       />
       <Routes>
         <Route
@@ -46,16 +74,32 @@ function App() {
               userSearch={userSearch}
               products={products}
               searchProducts={searchProducts}
-              filterProducts={filterProducts}
+              userFilter={userFilter}
+              productsFiltered={productsFiltered}
             />
           }
         >
+          </Route>
+          <Route
+            index
+            element={
+              <Home
+                cart={cart}
+                setCart={setCart}
+                userSearch={userSearch}
+                products={products}
+                searchProducts={searchProducts}
+                userFilter={userFilter}
+                productsFiltered={productsFiltered}
+              />
+            }
+          />
           <Route
             path="cart"
             element={<Cart cart={cart} removeFromCart={removeFromCart} />}
           />
           <Route path="*" element={<NoPage />} />
-        </Route>
+        
       </Routes>
     </BrowserRouter>
   );

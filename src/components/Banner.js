@@ -6,7 +6,7 @@ import HoverCart from "./HoverCart";
 import FilterProducts from "./FilterProducts";
 
 export default function Banner(props) {
-  const { setUserSearch, cart } = props;
+  const { setUserSearch, cart, setUserFilter, productCategories } = props;
   const [userInput, setUserInput] = useState("");
   const [isCartHovered, setIsCartHovered] = useState(false);
 
@@ -24,34 +24,28 @@ export default function Banner(props) {
   };
 
   return (
-    <nav className="navbar sticky-top">
-      <div className="container banner">
-        <div className="main">
+    <nav className="container-fluid navbar sticky-top">
+      <div className="row banner">
+        <span className="col bird">
           <Link to="/">
-            <img
-              src={Logo}
-              width="100"
-              height="100"
-              className="d-inline-block align-text-top logo"
-            />
+            <img src={Logo} width="100" height="100" className="logo" alt="logo"/>
           </Link>
-          <h1 className="col storeName">Phoenix Shopping</h1>
+        </span>
+        <h1 className="col storeName">Phoenix Shopping</h1>
 
-          <div className="col input-group input-group-sm">
-            <input
-              type="text"
-              className="form-control userSearch"
-              onChange={handleInput}
-              placeholder="search products"
-              value={userInput}
-            />
-            <span
-              className="btn search input-group-text"
-              onClick={handleSearch}
-            >
-              <FaSearch />
-            </span>
-          </div>
+        <div className="col input-group input-group-sm">
+          <input
+            type="text"
+            className="form-control userSearch"
+            onChange={handleInput}
+            placeholder="search products"
+            value={userInput}
+          />
+          <span className="btn search input-group-text" onClick={handleSearch}>
+            <FaSearch />
+          </span>
+        </div>
+        <span className="col link">
           <Link to="cart">
             <button
               className="btn btn-lg cart"
@@ -63,14 +57,21 @@ export default function Banner(props) {
             <br />
             {isCartHovered && <HoverCart cart={cart} />}
           </Link>
-          <Link>
-            <button className="btn btn-lg user">
+        </span>
+        <span className="col link">
+          <Link to="*">
+            <button className="col btn btn-lg user">
               <FaUserAlt />
             </button>
           </Link>
-        </div>
-        <FilterProducts />
+        </span>
       </div>
+      <span className="row filter">
+        <FilterProducts
+          setUserFilter={setUserFilter}
+          productCategories={productCategories}
+        />
+      </span>
     </nav>
   );
 }
