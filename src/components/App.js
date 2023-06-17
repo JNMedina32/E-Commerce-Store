@@ -92,12 +92,13 @@ function App() {
               productsFiltered={productsFiltered}
             />
           }
-        ></Route>
-        <Route
-          path="cart"
-          element={<Cart cart={cart} removeFromCart={removeFromCart} />}
-        />
-        <Route path="*" element={<NoPage />} />
+        >
+          <Route
+            path="/cart"
+            element={<Cart cart={cart} removeFromCart={removeFromCart} />}
+          />
+          <Route path="*" element={<NoPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
