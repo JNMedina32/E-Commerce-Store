@@ -65,6 +65,20 @@ function App() {
         productCategories={productCategories}
       />
       <Routes>
+      <Route
+            index
+            element={
+              <Home
+                cart={cart}
+                setCart={setCart}
+                userSearch={userSearch}
+                products={products}
+                searchProducts={searchProducts}
+                userFilter={userFilter}
+                productsFiltered={productsFiltered}
+              />
+            }
+          />
         <Route
           path="/"
           element={
@@ -80,20 +94,6 @@ function App() {
           }
         >
           </Route>
-          <Route
-            index
-            element={
-              <Home
-                cart={cart}
-                setCart={setCart}
-                userSearch={userSearch}
-                products={products}
-                searchProducts={searchProducts}
-                userFilter={userFilter}
-                productsFiltered={productsFiltered}
-              />
-            }
-          />
           <Route
             path="cart"
             element={<Cart cart={cart} removeFromCart={removeFromCart} />}
