@@ -1,0 +1,60 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #EEF1E6;
+  /* position: relative; */
+  padding: 0 1rem;
+  color: #EEF1E6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin: 0;
+}
+a.navbar-brand {
+  display: flex;
+}
+.searchDiv {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  width: 50%;
+}
+.searchBar {
+  background-color: var(--accent1);
+  border-radius: 8px;
+  border: 1px solid var(--accent1);
+  color: var(--main);
+}
+/* .offcanvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--accent1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+} */
+
+.offcanvas-header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30%;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px 10px 0;
+  margin: 5px;
+}
+.login * {
+  padding: 10px;
+  margin: 10px;
+}
+.form-control {
+  border-radius: 8px;
+  border: 1px solid var(--main);
+}
