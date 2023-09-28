@@ -12,6 +12,7 @@
   -webkit-text-size-adjust: 100%;
 }
 
+
 * {
   box-sizing: border-box;
   /* border: 1px solid red; */
@@ -22,6 +23,8 @@ body {
   padding: 0;
   background-image: url("../images/navbar/bgImg1.jpg");
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   color: var(--main);
 }
 
@@ -33,7 +36,6 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid var(--main);
-  padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
