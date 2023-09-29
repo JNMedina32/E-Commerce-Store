@@ -40,10 +40,6 @@ export default function Checkout() {
     setShowModal(true);
     setFormData(initialFormData);
     dispatch({ type: "CLEAR_CART" });
-    setTimeout(() => {
-      navigate("/");
-      setShowModal(false);
-    }, 3000);
   };
 
   const autoComplete = () => {
@@ -170,6 +166,7 @@ export default function Checkout() {
           title="Thank you for your purchase!"
           text="Your order will be shipped to the address provided."
           onClose={() => setShowModal(false)}
+          checkout={true}
         />
       )}
     </div>

@@ -4,10 +4,11 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--main);
-  padding: 0 1rem;
+  padding: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   margin: 0 0 100px;
+  
 }
 .navContent {
   display: flex;
@@ -22,6 +23,10 @@ a.navbar-brand {
   text-decoration: none;
   color: var(--accent1);
   position: relative;
+  margin: 0 0 0 10px;
+}
+.storeName {
+  margin: 0;
 }
 .logo {
   width: 50px;
@@ -54,10 +59,11 @@ a.navbar-brand {
 
 .searchDiv {
   display: flex;
+  align-items: center;
   text-align: center;
   justify-content: center;
   height: 40px;
-  width: 30%;
+  width: 70%;
   padding: 0;
   margin: 0;
 }
@@ -66,14 +72,12 @@ a.navbar-brand {
   border-radius: 8px;
   border: 1px solid var(--accent1);
   color: var(--main);
-  width: 100%;
+  width: 70%;
   height: 100%;
   margin-right: 5px;
+  
 }
 .searchBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 50px;
   height: 100%;
 }
@@ -82,9 +86,6 @@ a.navbar-brand {
   color: var(--main);
   width: 50px;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .menuBtn {
@@ -126,3 +127,4 @@ a.navbar-brand {
   width: 100%;
   text-align: center;
 }
+

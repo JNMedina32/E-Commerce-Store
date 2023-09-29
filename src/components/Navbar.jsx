@@ -1,4 +1,4 @@
-import { biSearch } from "../assets/images/icons/bootstrap.jsx";
+import { biSearch, biMenu } from "../assets/images/icons/bootstrap.jsx";
 import "../assets/styles/Navbar.css";
 import storeLogo from "../assets/images/navbar/logo3.jpg";
 import { useUser } from "../assets/helpers/userReducer";
@@ -44,9 +44,9 @@ export default function Navbar() {
           data-tooltip="Return Home"
         >
           <img src={storeLogo} alt="store logo" className="logo " />
-          Your Store Name
+          <p className="storeName">Your Store Name</p>
         </Link>
-        <form onSubmit={handleSubmit} className="searchDiv">
+        <form onSubmit={handleSubmit} className="searchDiv  d-none d-lg-inline">
           <input
             type="text"
             placeholder="Search"
@@ -84,7 +84,7 @@ export default function Navbar() {
               className="menuBtn navToolTip"
               data-tooltip="Menu"
             >
-              Login
+              {biMenu}
             </button>
           )}
         </div>

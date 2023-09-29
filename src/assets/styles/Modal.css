@@ -23,7 +23,8 @@
   border-radius: 5px;
 }
 .custom-modal-header,
-.custom-modal-body, .custom-modal-footer {
+.custom-modal-body,
+.custom-modal-footer {
   padding: 10px;
 }
 .custom-modal-title {
@@ -32,4 +33,9 @@
 }
 .custom-btn-close {
   padding: 5px 15px;
+  margin: 0 5px;
+}
+.custom-modal-footer {
+  display: flex;
+  justify-content: space-evenly;
 }
