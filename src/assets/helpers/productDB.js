@@ -62,7 +62,7 @@ export const productDB = [
     ],
     description: "Compact digital camera for capturing special moments.",
     image:
-      "https://media.istockphoto.com/id/1286099765/photo/close-up-of-hand-touching-smartwatch-with-health-app-on-the-screen-gadget-for-fitness-active.jpg?s=612x612&w=0&k=20&c=T1ufyTQBhKl-VzNsJEIbgLCZSStFbldTy2RECo67Csg=",
+      "https://media.istockphoto.com/id/1395908864/photo/professional-dslr-camera-on-the-wooden-table.jpg?s=612x612&w=0&k=20&c=QqflGzia3i6ZyRFcqYIt7glD29sM7jUsmJctBrfXuUo=",
   },
   {
     id: 7,
@@ -265,24 +265,6 @@ export const productDB = [
     description: "High-definition LED TV with smart features.",
     image:
       "https://media.istockphoto.com/id/1144975137/photo/white-screen-led-tv-television-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=Jc3GG0IQDxtnMRgfss8Xh2K_FIP0mwM07u2vcDTc8jo=",
-  },
-  {
-    id: 28,
-    name: "Printed Book",
-    price: 14.99,
-    department: ["Books & Media", "Office & Work", "Travel & Luggage"],
-    description: "Best-selling book in print format.",
-    image:
-      "https://media.istockphoto.com/id/1164278931/photo/portrait-of-concentrated-person-holding-printed-book-looking-wearing-checked-shirt-bag.jpg?s=612x612&w=0&k=20&c=xk8pb3iOg8H2ANmAbKQ0nIOC4nY8yj4efTp0RNQzlgw=",
-  },
-  {
-    id: 29,
-    name: "eBook",
-    price: 9.99,
-    department: ["Books & Media", "Office & Work", "Travel & Luggage"],
-    description: "Digital version of a popular book for e-readers.",
-    image:
-      "https://media.istockphoto.com/id/926220248/photo/girl-is-reading-ebook-while-relaxing-on-the-sofa.jpg?s=612x612&w=0&k=20&c=g_ntili-Kbdg2DqS4ZcmJ9uSgD9xO7pRdNkyxQQpUEc=",
   },
   {
     id: 30,
@@ -1167,7 +1149,6 @@ export const departmentDB = [
   "Electronics",
   "Toys & Games",
   "Clothing & Accessories",
-  "Books & Media",
   "Home & Kitchen",
   "Sports & Outdoors",
   "Pet Supplies",
@@ -1179,7 +1160,7 @@ export const departmentDB = [
   "Outdoor & Camping",
   "Automotive & Car Accessories",
   "Music & Instruments",
-  "Kitchen Appliances",
+
   "Video Games & Entertainment",
   "Baby & Child Care",
   "Photography",

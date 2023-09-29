@@ -1,0 +1,43 @@
+.checkoutSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--main);
+  background-color: var(--accent1);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--main);
+}
+hr {
+  width: 100%;
+  border: 1px solid var(--main);
+}
+
+.coList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+.coListItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border: 1px solid var(--accent1);
+  margin: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+.coListItem * {
+  padding: 5px;
+}
+.coAddRemove > button {
+  width: 40px;
+}
+.mockForm * {
+  padding: 5px;
+}

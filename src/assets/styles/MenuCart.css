@@ -1,0 +1,20 @@
+.cartSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--main);
+}
+.cartSection * {
+  padding-bottom: 5px;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+}
+.addRemove {
+  width: 20%;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+}

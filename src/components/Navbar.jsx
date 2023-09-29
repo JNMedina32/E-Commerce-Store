@@ -4,35 +4,90 @@ import storeLogo from "../assets/images/navbar/logo3.jpg";
 import { useUser } from "../assets/helpers/userReducer";
 import userImg from "../assets/images/navbar/userImg.jpg";
 import Menu from "./Menu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
-  const { state } = useUser();
+  const { state, dispatch } = useUser();
+  const [userInput, setUserInput] = useState({ search: "" });
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserInput({ ...userInput, [name]: value });
+  };
+
+  const handleFilter = (filter) => {
+    dispatch({ type: "FILTER", payload: filter });
+    navigate("/FilteredProducts");
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (userInput.search) {
+      handleFilter(userInput.search);
+    }
+  };
+
+  useEffect(() => {
+    if (userInput.search === "") {
+      dispatch({ type: "FILTER", payload: "" });
+      navigate("/");
+    }
+  }, [userInput.search, dispatch]);
 
   return (
     <section className="navbar sticky-top">
       <div className="container-fluid navContent">
-        <Link to="#home" className="navbar-brand">
-          <img src={storeLogo} alt="store logo" className="logo" />
+        <Link
+          to="/"
+          className="navbar-brand navToolTip"
+          data-tooltip="Return Home"
+        >
+          <img src={storeLogo} alt="store logo" className="logo " />
           Your Store Name
         </Link>
-        <form className="searchDiv">
-          <input type="text" placeholder="Search" className="searchBar" />
-          <button className="searchBtn">{biSearch}</button>
+        <form onSubmit={handleSubmit} className="searchDiv">
+          <input
+            type="text"
+            placeholder="Search"
+            className="searchBar"
+            name="search"
+            onChange={handleChange}
+            value={userInput.search}
+          />
+          <button
+            className={`searchBtn ${userInput.search ? "" : "disabled"}`}
+            type="submit"
+            disabled={!userInput.search}
+          >
+            {biSearch}
+          </button>
         </form>
-        <button
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#menu"
-          aria-controls="menu"
-          className="menuBtn"
-        >
+        <div className="menuToggleDiv">
           {state.loggedIn ? (
-            <img src={userImg} alt="user" className="userImg" />
+            <button
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#menu"
+              aria-controls="menu"
+              className="menuBtn navToolTip"
+              data-tooltip="Menu"
+            >
+              <img src={userImg} alt="user" className="userImg" />
+            </button>
           ) : (
-            "Login"
+            <button
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#menu"
+              aria-controls="menu"
+              className="menuBtn navToolTip"
+              data-tooltip="Menu"
+            >
+              Login
+            </button>
           )}
-        </button>
+        </div>
       </div>
       <Menu />
     </section>

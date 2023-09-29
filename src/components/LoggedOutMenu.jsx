@@ -1,4 +1,4 @@
-import { useUser } from "./userReducer";
+import { useUser } from "../assets/helpers/userReducer";
 import { useState } from "react";
 
 export default function LoggedOutMenu() {
@@ -12,11 +12,11 @@ export default function LoggedOutMenu() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserInput({ ...userInput, [name]: value });
-    console.log(userInput);
+ 
   };
 
   const handleSubmit = (e) => {
-    console.log("userInput: ", userInput);
+ 
     e.preventDefault();
     if (
       userInput.username === user.username &&
@@ -24,7 +24,7 @@ export default function LoggedOutMenu() {
     ) {
       dispatch({ type: "LOGIN" });
     }
-  }
+  };
 
   return (
     <section className="container loggedMenu">
@@ -60,11 +60,7 @@ export default function LoggedOutMenu() {
           </div>
           <div className="row">
             <div className="col">
-              <button
-                type="button"
-                className="loginBtn"
-                onClick={handleSubmit}
-              >
+              <button data-bs-dismiss="offcanvas" type="button" className="loginBtn" onClick={handleSubmit}>
                 Login
               </button>
             </div>

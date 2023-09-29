@@ -16,6 +16,7 @@
   background-color: var(--main);
   color: var(--accent1);
   width: 100%;
+  position: relative;
 }
 
 .rowHeader {
@@ -32,11 +33,41 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  overflow-x: auto;
-  white-space: nowrap !important;
-  overflow-y: hidden;
+  /* position: relative; */
+  /* overflow-x: auto; */
+  white-space: nowrap;
+  overflow: hidden;
   width: 100%;
   height: calc(100% - 40px)
+}
+
+.arrowBtn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid var(--accent1);
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--accent1);
+  background-color: var(--main);
+  height: fit-content;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.55;
+}
+
+.arrowBtn:hover {
+  opacity: 1;
+}
+
+.arrowBtn.left {
+  left: 0;
+}
+
+.arrowBtn.right {
+  right: 0;
 }
 
 .productCol {

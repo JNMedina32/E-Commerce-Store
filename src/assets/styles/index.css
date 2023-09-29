@@ -26,6 +26,8 @@ body {
   background-attachment: fixed;
   background-position: center;
   color: var(--main);
+  display: flex;
+  justify-content: center;
 }
 
 h1 {

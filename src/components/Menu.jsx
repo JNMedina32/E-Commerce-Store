@@ -1,8 +1,9 @@
 import { useUser } from "../assets/helpers/userReducer";
 import "../assets/styles/Navbar.css";
 import storeLogo from "../assets/images/navbar/logo3.jpg";
-import LoggedOutMenu from "../assets/helpers/LoggedOutMenu";
-import LoggedInMenu from "../assets/helpers/LoggedInMenu";
+import LoggedOutMenu from "./LoggedOutMenu";
+import LoggedInMenu from "./LoggedInMenu";
+
 
 
 export default function Menu() {

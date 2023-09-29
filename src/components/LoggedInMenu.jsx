@@ -1,4 +1,5 @@
-import { useUser } from "./userReducer";
+import { useUser } from "../assets/helpers/userReducer";
+import MenuCart from "./MenuCart";
 
 export default function LoggedInMenu() {
   const { state, dispatch } = useUser();
@@ -17,12 +18,7 @@ export default function LoggedInMenu() {
           {cart.length === 0 ? (
             <p>Is Empty</p>
           ) : (
-            cart.map((item) => (
-              <div key={item.id}>
-                <p>{item.name}</p>
-                <p>${item.price}</p>
-              </div>
-            ))
+            <MenuCart />
           )}
         </div>
       </div>
