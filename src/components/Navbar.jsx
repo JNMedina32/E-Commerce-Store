@@ -39,7 +39,7 @@ export default function Navbar() {
     <section className="navbar sticky-top">
       <div className="container-fluid navContent">
         <Link
-          to="/"
+          to="/E-Commerce-Store"
           className="navbar-brand navToolTip"
           data-tooltip="Return Home"
         >
