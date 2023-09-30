@@ -4,7 +4,7 @@
 
 This project is a mock e-commerce store built using React and Bootstrap. It's designed to replicate the experience of online shopping. Users can "log in", add and remove items to/from their cart, search for products, and go through a mock checkout process using predefined user data.
 
-![screenshot](../e-commerce-store-v2//src/assets/images/misc/e-commerce-store.v2.png)
+![screenshot](./e-commerce-store.v2.png)
 
 ## Features
 
