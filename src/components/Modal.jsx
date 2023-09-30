@@ -22,7 +22,7 @@ export default function Modal({ title, text, onClose, checkout = false }) {
                   type="button"
                   className="custom-btn-close"
                   onClick={() => {
-                    navigate("/");
+                    navigate("/E-Commerce-Store");
                     onClose();
                     }}
                 >
@@ -33,7 +33,7 @@ export default function Modal({ title, text, onClose, checkout = false }) {
                   className="custom-btn-close"
                   onClick={() => {
                     dispatch({ type: "LOGOUT" });
-                    navigate("/");
+                    navigate("/E-Commerce-Store");
                     onClose();
                   }}
                 >

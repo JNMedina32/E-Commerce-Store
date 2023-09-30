@@ -33,7 +33,7 @@ export default function Menu() {
   useEffect(() => {
     if (userInput.search === "") {
       dispatch({ type: "FILTER", payload: "" });
-      navigate("/");
+      navigate("/E-Commerce-Store");
     }
   }, [userInput.search, dispatch]);
 

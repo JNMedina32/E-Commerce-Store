@@ -2,7 +2,6 @@ import { useUser } from "../assets/helpers/userReducer";
 import "../assets/styles/Checkout.css";
 import { useCart } from "../assets/helpers/useCart";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 
 export default function Checkout() {

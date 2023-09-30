@@ -12,7 +12,7 @@ function App() {
       <UserProvider>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/E-Commerce-Store" element={<Home />} />
           <Route path="/FilteredProducts" element={<FilteredProducts />} />
           <Route path="/Checkout" element={<Checkout />} />
           <Route path="*" element={<NoPage />} />
