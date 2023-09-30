@@ -52,7 +52,8 @@ export default function Checkout() {
       <ul className="list-group row coList">
         {Object.values(groupedCart).map((item, index) => (
           <li className="list-group-item coListItem col" key={index}>
-            {item.name} <br /> ${item.price} <br /> ( x {item.quantity})
+            {item.name} <br /> {item.salePrice ? item.salePrice : item.price}{" "}
+            <br /> ( x {item.quantity})
             <div className="coAddRemove">
               <button onClick={() => addToCart(item)}>+</button>
               <button onClick={() => removeFromCart(item)}>-</button>
@@ -61,7 +62,7 @@ export default function Checkout() {
         ))}
       </ul>
       <div className="row">
-        <h3>Total: ${totalPrice}</h3>
+        <h3>Total: ${totalPrice.toFixed(2)}</h3>
       </div>
       <hr />
       <div className="row">
@@ -157,7 +158,9 @@ export default function Checkout() {
             </div>
           </div>
           <div className="row">
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
           </div>
         </form>
       </div>

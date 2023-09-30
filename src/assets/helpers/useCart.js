@@ -8,7 +8,11 @@ export const useCart = () => {
 
   const cartTotal = (cart) => {
     return cart.reduce((total, item) => {
-      return total + parseFloat(item.price);
+      if(item.salePrice){
+        return (total +  parseFloat(item.salePrice)).toFixed(2);
+      } else {
+        return (total + parseFloat(item.price));
+      }
     }, 0);
   };
 

@@ -22,6 +22,8 @@
     justify-content: center;
     background-color: var(--main);
     color: var(--accent1);
+    border-radius: 8px;
+    width: fit-content;
 }
 
 
@@ -34,9 +36,14 @@
     flex-wrap: wrap;
 }
 .filterHeader{
-    width: 100%;
+    padding: 10px 20px;
 }
 .eaProduct {
     margin: 5px;
     height: 350px;
+    display: flex;
+
+}
+.produ {
+    justify-content: center;
 }

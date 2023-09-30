@@ -20,10 +20,10 @@ export default function FilteredProducts() {
         </div>
       ) : (
         <div className="products">
-          <h2 className="filterHeader">Showing Results for: {filter}</h2>
-          <div className="row">
+          <h2 className="filterHeader"><span className="depTitle">Showing Results for: {filter}</span></h2>
+          <div className="row produ">
             {filteredProducts.map((product) => (
-              <div key={product.id} className="col eaProduct">
+              <div key={product.id} className="col-1 eaProduct">
                 <ProductCard  product={product} />
               </div>
             ))}

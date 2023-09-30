@@ -30,12 +30,26 @@ export default function ProductCard({ product }) {
   };
 
   return (
-    <section className="card productCard">
+    <section
+      className={`card productCard ${product.salePrice ? "saleProd" : ""} `}
+    >
       <img src={product.image} alt={product.name} className="card-img-top" />
       <div className="card-body">
         <h5 className="card-title">{product.name}</h5>
-        <p className="card-text">${product.price.toFixed(2)}</p>
-        <div className={tooltipMsg ? "tooltip active" : "tooltip"}>{tooltipMsg}</div>
+        <p className="card-text price">
+          {product.salePrice ? (
+            <>
+              <span className="oldPrice">${product.price.toFixed(2)}</span>
+              <span className="salePrice">${product.salePrice.toFixed(2)}</span>
+            </>
+          ) : (
+            <>${product.price.toFixed(2)}</>
+          )}{" "}
+        </p>
+        <p className="card-text descr">{product.description}</p>
+        <div className={tooltipMsg ? "tooltip active" : "tooltip"}>
+          {tooltipMsg}
+        </div>
         {cart.find((item) => item.id === product.id) ? (
           <div className="card-footer">
             <button className="btn btn-success cardBtn" onClick={addToCart}>

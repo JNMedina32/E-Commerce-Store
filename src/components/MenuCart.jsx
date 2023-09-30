@@ -12,7 +12,8 @@ export default function MenuCart() {
           <ul className="list-group">
             {Object.values(groupedCart).map((item, index) => (
               <li className="list-group-item cartItem row" key={index}>
-                {item.name} - ${item.price} ( x {item.quantity})
+                {item.name} - {item.salePrice ? item.salePrice : item.price} ( x{" "}
+                {item.quantity})
                 <div className="addRemove">
                   <button onClick={() => addToCart(item)}>+</button>
                   <button onClick={() => removeFromCart(item)}>-</button>
@@ -24,13 +25,17 @@ export default function MenuCart() {
       </div>
       <div className="row">
         <div className="col">
-          <p>Total: ${totalPrice.toFixed(2)}</p>
+          <p>Total: ${totalPrice}</p>
         </div>
       </div>
       <div className="row">
         <div className="col">
           <Link to="/Checkout">
-            <button  data-bs-dismiss="offcanvas" type="button" className="btn btn-primary">
+            <button
+              data-bs-dismiss="offcanvas"
+              type="button"
+              className="btn btn-primary"
+            >
               Checkout
             </button>
           </Link>
