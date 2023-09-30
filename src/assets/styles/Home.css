@@ -27,9 +27,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 0;
   width: 100%;
-  height: 40px;
-  padding: 0 20px;
 }
 
 .productRow {
@@ -90,73 +89,43 @@
   height: 100%;
   margin: 0 10px;
 }
-.flashSale {
-  background-color: var(--accent1);
-  display: flex;
-  width: fit-content;
-  height: 500px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.flashRow {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  height: 100%;
-  padding: 0 10px;
-}
-.carousel-item {
-  height: 350px;
-  width: 100%;
 
-}
-.carousel-container {
-  position: relative;
-  width: 350px;
-  height: 550px;
-  overflow: hidden;
+
+
+
+@media (min-width: 992px) {
+  .depTitle {
+    font-size: 1.5rem;
+  }
+  .viewAll {
+    font-size: 1.2rem;
+  }
 }
 
-.custom-carousel-item {
-  height: 350px;
-  width: 350px;
-}
-
-/* Add your styles for oldPrice, salePrice, and saleProd here */
-
-.flashCard, .carousel-item {
-  width: 350px; /* Set to your desired fixed width */
-}
-
-.flashCard.card-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* If you want to set a fixed height for the image as well */
-.card-img-top {
-  max-height: 150px; /* Adjust according to your needs */
-  object-fit: cover; /* To keep aspect ratio */
+@media (max-width: 991px) {
+  .depTitle {
+    font-size: 1.2rem;
+  }
+  .viewAll {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .departmentRow {
-    height: 300px;
-  }
-  .productRow {
-    height: calc(100% - 30px);
-  }
-  .arrowBtn {
-    font-size: 2rem;
-  }
   .depTitle {
-    font-size: .9rem;
+    font-size: 1rem;
   }
   .viewAll {
-    font-size: .8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .depTitle {
+    font-size: 0.8rem;
+  }
+  .viewAll {
+    font-size: 0.8rem;
   }
 }
   

@@ -8,7 +8,6 @@ import Modal from "../components/Modal";
 export default function Checkout() {
   const { groupedCart, totalPrice, addToCart, removeFromCart } = useCart();
   const { dispatch } = useUser();
-  const navigate = useNavigate();
   const mockSavedData = {
     firstName: "Barry",
     lastName: "Allen",

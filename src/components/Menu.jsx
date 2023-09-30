@@ -5,7 +5,7 @@ import storeLogo from "../assets/images/navbar/logo3.jpg";
 import LoggedOutMenu from "./LoggedOutMenu";
 import LoggedInMenu from "./LoggedInMenu";
 import { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Menu() {
   const { state, dispatch } = useUser();

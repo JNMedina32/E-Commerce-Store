@@ -1,6 +1,5 @@
 import { departmentDB, productDB } from "../assets/helpers/productDB";
 import ProductCard from "../components/ProductCard";
-import { FlashSaleCarousel } from "../components/FlashSaleCarousel";
 import "../assets/styles/Home.css";
 import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
@@ -11,7 +10,6 @@ import { useUser } from "../assets/helpers/userReducer";
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [scrollProducts, setScrollProducts] = useState({});
-  const [flashSaleProducts, setFlashSaleProducts] = useState([]);
   const maxProductsPerRow = 10;
   const departmentRef = useRef({});
   const { dispatch, state } = useUser();
@@ -23,26 +21,9 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => setShowModal(true), 1000);
-    const selectRandomProducts = () => {
-      let randomIndexes = [];
-      while (randomIndexes.length < 2) {
-        let r = Math.floor(Math.random() * productDB.length);
-        if (randomIndexes.indexOf(r) === -1) randomIndexes.push(r);
-      }
-      const selectedProducts = randomIndexes.map((index) => {
-        return {
-          ...productDB[index],
-          price: productDB[index].price,
-          salePrice: productDB[index].price * 0.8,
-        }; // 20% discount
-      });
-      setFlashSaleProducts(selectedProducts);
-    };
-    selectRandomProducts();
-    console.log("inside of useEffect", flashSaleProducts);
   }, []);
 
-  console.log("outside of useEffect", flashSaleProducts);
+
 
   return (
     <section className="homeSection">
@@ -56,11 +37,11 @@ export default function Home() {
 
       {departmentDB.map((department) => (
         <div key={department} className="departmentRow" id={department}>
-          <div className="rowHeader">
-            <h5 className="col-1 depTitle">{department}</h5>
-            <Link to="/FilteredProducts">
+          <div className="row rowHeader">
+            <h5 className="col-lg-8 col-md-6 col-sm-4 col-3 depTitle">{department}</h5>
+            <Link to="/FilteredProducts" className="col">
               <button
-                className="col viewAll"
+                className="viewAll"
                 onClick={() => handleFilter(department)}
               >
                 View All
