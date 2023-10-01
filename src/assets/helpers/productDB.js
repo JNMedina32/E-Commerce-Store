@@ -1160,12 +1160,10 @@ export const departmentDB = [
   "Outdoor & Camping",
   "Automotive & Car Accessories",
   "Music & Instruments",
-
   "Video Games & Entertainment",
   "Baby & Child Care",
   "Photography",
   "Office & Work",
-  "Beauty & Personal Care",
   "Travel & Luggage",
 ];
 
