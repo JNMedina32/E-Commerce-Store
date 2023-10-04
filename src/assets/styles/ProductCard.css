@@ -14,8 +14,9 @@
   align-items: center;
 }
 
-.card-title, .card-body {
-  text-wrap: wrap;
+.card-title,
+.card-body {
+  white-space: pre-line;
   text-align: center;
 }
 
@@ -26,7 +27,7 @@
 
 .card-img-top {
   height: 50%; /* Set it according to your needs */
-  object-fit: cover; 
+  object-fit: cover;
   border-bottom: 1px solid var(--accent1);
 }
 
@@ -58,14 +59,12 @@
 .tooltip.active {
   opacity: 1;
 }
-.card-text.descr{
+.card-text.descr {
   font-size: 0.8rem;
   text-align: start;
-  text-wrap: wrap;
+  white-space: pre-line;
   padding: 0 4px;
 }
-
-
 
 /* makes the borders move along the side */
 @keyframes borderMoveLeft {
@@ -91,11 +90,10 @@
   }
 }
 
-
-.saleProd::before{
+.saleProd::before {
   animation: borderMoveLeft 2s infinite;
 }
 
-.saleProd::after{
+.saleProd::after {
   animation: borderMoveRight 2s infinite;
 }
