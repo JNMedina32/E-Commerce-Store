@@ -9,7 +9,7 @@ export const useCart = () => {
   const cartTotal = (cart) => {
     return cart.reduce((total, item) => {
       if(item.salePrice){
-        return (total +  parseFloat(item.salePrice)).toFixed(2);
+        return (total +  parseFloat(item.salePrice));
       } else {
         return (total + parseFloat(item.price));
       }
@@ -35,8 +35,8 @@ export const useCart = () => {
       };
     }
   });
-  console.log(groupedCart);
-  const totalPrice = cartTotal(cart);
+
+  const totalPrice = cartTotal(cart).toFixed(2);
 
   return {
     groupedCart,
